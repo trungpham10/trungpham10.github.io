@@ -43,10 +43,24 @@ P {
 
 h2 {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
+  margin-top: 5px;
 }
 
-h2:hover {
+.h2:hover {
+  text-shadow: 2px 2px;
+}
+
+.item-box {
+  width: 500px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid white;
+  background-color: gray;
+  margin-top: 100px;
+}
+
+.item-box:hover {
   text-shadow: 2px 2px;
 }

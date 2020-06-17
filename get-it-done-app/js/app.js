@@ -36,9 +36,12 @@ $(() => {
   item.focus();
   okButton.addEventListener("click", (event) => {
     event.preventDefault();
+    const $div = $("<div>");
+    $div.addClass("item-box");
     const $h2 = $("<h2>");
     $h2.text(item.value);
-    $(".item").append($h2);
+    $div.append($h2);
+    $(".item").append($div);
     item.remove();
     okButton.remove();
 
