@@ -49,4 +49,11 @@ $(() => {
     // console.log(quoteData.quote.quoteText);
     // console.log(quoteData.quote.quoteAuthor);
   });
+
+  const okButton = document.getElementById("ok-button");
+  const item = document.getElementById("item");
+  okButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log(item.value);
+  });
 });
