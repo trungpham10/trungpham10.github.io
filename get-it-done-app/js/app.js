@@ -18,21 +18,21 @@ $(() => {
   //   console.log(searchTerm);
   // });
 
-  $.ajax({
-    type: "GET",
-    url: quoteOfTheDay,
-    token: "57466b162e44774694d5770fdefbf733",
-  }).then((quoteData) => {
-    $(".quote").append(`
-      <p> "${quoteData.quote.body}" </p>
-      <p>- ${quoteData.quote.author} </p>
-    `);
-    console.log(quoteData.quote);
-  });
+  // $.ajax({
+  //   type: "GET",
+  //   url: quoteOfTheDay,
+  //   token: "57466b162e44774694d5770fdefbf733",
+  // }).then((quoteData) => {
+  //   $(".quote").append(`
+  //     <p> "${quoteData.quote.body}" </p>
+  //     <p>- ${quoteData.quote.author} </p>
+  //   `);
+  //   console.log(quoteData.quote);
+  // });
 
   const okButton = document.getElementById("ok-button");
   const item = document.getElementById("item");
-  item.focus();
+  // item.focus();
   let count = 0;
   okButton.addEventListener("click", (event) => {
     event.preventDefault();

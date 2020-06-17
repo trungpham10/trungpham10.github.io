@@ -2,11 +2,9 @@ body {
   background-color: #262626;
 }
 
-/* .typeBox {
-  width: 600px;
-  height: 45px;
-  margin: auto;
-} */
+.addSection {
+  margin-top: 150px;
+}
 
 .typeBox {
   width: 500px;
