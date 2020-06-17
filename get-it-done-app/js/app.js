@@ -16,8 +16,12 @@ $(() => {
     url: "https://quote-garden.herokuapp.com/api/v2/quotes/random",
   }).then((quoteData) => {
     console.log("Return quote data success!");
-    console.log(quoteData.quote);
-    console.log(quoteData.quote.quoteText);
-    console.log(quoteData.quote.quoteAuthor);
+    $(".container").append(`
+      <p> "${quoteData.quote.quoteText}" </p>
+      <p>- ${quoteData.quote.quoteAuthor} </p>
+    `);
+    // console.log(quoteData.quote);
+    // console.log(quoteData.quote.quoteText);
+    // console.log(quoteData.quote.quoteAuthor);
   });
 });

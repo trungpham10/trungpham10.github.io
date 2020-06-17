@@ -1,3 +1,10 @@
 body {
   background-color: #262626;
 }
+
+P {
+  /* color: aliceblue; */
+  color: azure;
+  text-align: center;
+  margin-left: auto;
+}
