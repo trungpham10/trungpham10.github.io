@@ -40,6 +40,9 @@ $(() => {
     count++;
     const $div = $("<div>");
     $div.addClass("item-box");
+    const $roll = $("<div>");
+    $roll.addClass("clear-item");
+    $div.append($roll);
     const $h2 = $("<h2>");
     $h2.text(item.value);
     $div.append($h2);

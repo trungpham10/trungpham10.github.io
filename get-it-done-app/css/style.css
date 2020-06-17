@@ -59,10 +59,20 @@ h2 {
   border: 1px solid white;
   background-color: #262626;
   margin-top: 100px;
+  display: inline-block;
 }
 
 .item-box:hover {
   text-shadow: 2px 2px;
   background-color: black;
   border: 2px solid antiquewhite;
+}
+
+.clear-item {
+  width: 50px;
+  height: 50px;
+  float: left;
+  border: 1px solid white;
+  display: inline-block;
+  background-color: blueviolet;
 }
