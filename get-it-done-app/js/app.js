@@ -33,7 +33,7 @@ $(() => {
 
   $.ajax({
     type: "GET",
-    url: quoteByAuthor,
+    url: quoteOfTheDay,
     token: "57466b162e44774694d5770fdefbf733",
   }).then((quoteData) => {
     console.log("Return quote data success!");
