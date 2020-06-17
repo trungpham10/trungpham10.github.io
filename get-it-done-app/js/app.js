@@ -8,16 +8,15 @@ const apiKey = "57466b162e44774694d5770fdefbf733";
 const quoteOfTheDay = "https://favqs.com/api/qotd";
 
 $(() => {
-  // const inputSearch = $("#searchTerm");
-  const inputSearch = document.getElementById("searchTerm");
-  const button = document.getElementById("searchButton");
+  // const inputSearch = document.getElementById("searchTerm");
+  // const button = document.getElementById("searchButton");
 
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    const searchTerm = inputSearch.value;
+  // button.addEventListener("click", (event) => {
+  //   event.preventDefault();
+  //   const searchTerm = inputSearch.value;
 
-    console.log(searchTerm);
-  });
+  //   console.log(searchTerm);
+  // });
 
   $.ajax({
     type: "GET",
