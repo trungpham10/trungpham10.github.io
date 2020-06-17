@@ -36,7 +36,6 @@ $(() => {
   item.focus();
   okButton.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(item.value);
     const $h2 = $("<h2>");
     $h2.text(item.value);
     $(".item").append($h2);
