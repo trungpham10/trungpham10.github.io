@@ -58,5 +58,10 @@ $(() => {
     $(".item").append("<h2>" + item.value + "</h2>");
     item.remove();
     okButton.remove();
+
+    $("h2").on("click", () => {
+      alert("click h2 element!");
+      $("h2").css("text-decoration", "line-through");
+    });
   });
 });
