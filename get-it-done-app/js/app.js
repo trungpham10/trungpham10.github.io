@@ -56,6 +56,7 @@ $(() => {
     $h2.on("click", () => {
       $roll.addClass("animation");
       $h2.css("text-decoration", "line-through");
+      $roll.className -= "animation";
     });
   });
 });
