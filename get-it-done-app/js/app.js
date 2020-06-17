@@ -34,19 +34,24 @@ $(() => {
   const okButton = document.getElementById("ok-button");
   const item = document.getElementById("item");
   item.focus();
+  let count = 0;
   okButton.addEventListener("click", (event) => {
     event.preventDefault();
+    count++;
     const $div = $("<div>");
     $div.addClass("item-box");
     const $h2 = $("<h2>");
     $h2.text(item.value);
     $div.append($h2);
     $(".item").append($div);
-    item.remove();
-    okButton.remove();
+    item.value = "";
+    if (count == 3) {
+      item.remove();
+      okButton.remove();
+    }
 
     $h2.on("click", () => {
-      $("h2").css("text-decoration", "line-through");
+      $h2.css("text-decoration", "line-through");
     });
   });
 });

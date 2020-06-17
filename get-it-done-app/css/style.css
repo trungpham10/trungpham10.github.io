@@ -10,7 +10,7 @@ P {
 }
 
 .items {
-  background-color: black;
+  background-color: #262626;
   width: 800px;
   height: 1000px;
   margin: auto;
@@ -57,10 +57,11 @@ h2 {
   height: 50px;
   margin: auto;
   border: 1px solid white;
-  background-color: gray;
+  background-color: #262626;
   margin-top: 100px;
 }
 
 .item-box:hover {
   text-shadow: 2px 2px;
+  background-color: black;
 }
