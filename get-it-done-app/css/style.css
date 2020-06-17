@@ -64,4 +64,5 @@ h2 {
 .item-box:hover {
   text-shadow: 2px 2px;
   background-color: black;
+  border: 2px solid antiquewhite;
 }
