@@ -30,6 +30,10 @@ input:focus {
   outline: none;
 }
 
+.typeBox:hover {
+  border: 3px solid #262626;
+}
+
 /* .typeBox {
   width: 500px;
   height: 50px;
