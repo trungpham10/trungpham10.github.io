@@ -7,7 +7,7 @@ body {
 }
 
 .typeBox {
-  width: 500px;
+  width: 700px;
   height: 35px;
   margin: auto;
   background-color: floralwhite;
@@ -16,7 +16,7 @@ body {
 }
 
 #typeArea {
-  width: 450px;
+  width: 600px;
   height: 20px;
   background-color: floralwhite;
   margin: auto;
