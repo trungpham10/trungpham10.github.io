@@ -40,3 +40,9 @@ P {
   width: 100px;
   background-color: floralwhite;
 }
+
+h2 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}

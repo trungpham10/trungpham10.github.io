@@ -55,5 +55,8 @@ $(() => {
   okButton.addEventListener("click", (event) => {
     event.preventDefault();
     console.log(item.value);
+    $(".item").append("<h2>" + item.value + "</h2>");
+    item.remove();
+    okButton.remove();
   });
 });
