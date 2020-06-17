@@ -8,3 +8,10 @@ P {
   text-align: center;
   margin-left: auto;
 }
+
+.items {
+  background-color: black;
+  width: 800px;
+  height: 1000px;
+  margin: auto;
+}

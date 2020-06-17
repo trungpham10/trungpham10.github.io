@@ -41,7 +41,7 @@ $(() => {
     //   <p> "${quoteData.quote.quoteText}" </p>
     //   <p>- ${quoteData.quote.quoteAuthor} </p>
     // `);
-    $(".container").append(`
+    $(".quote").append(`
       <p> "${quoteData.quote.body}" </p>
       <p>- ${quoteData.quote.author} </p>
     `);
