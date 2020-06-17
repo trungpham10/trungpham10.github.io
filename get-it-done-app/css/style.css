@@ -41,15 +41,15 @@ P {
   background-color: floralwhite;
 }
 
-h2 {
+.item-text {
   color: white;
   font-size: 30px;
   text-align: center;
   margin-top: 5px;
 }
 
-.h2:hover {
-  text-shadow: 2px 2px;
+.item-text:hover {
+  text-shadow: 0.5px;
 }
 
 .item-box {

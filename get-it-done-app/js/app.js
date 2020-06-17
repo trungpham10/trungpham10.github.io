@@ -43,9 +43,9 @@ $(() => {
     const $roll = $("<div>");
     $roll.addClass("clear-item");
     $div.append($roll);
-    const $h2 = $("<h2>");
-    $h2.text(item.value);
-    $div.append($h2);
+    const $text = $("<div class='item-text'>");
+    $text.text(item.value);
+    $div.append($text);
     $(".item").append($div);
     item.value = "";
     if (count == 3) {
@@ -53,9 +53,9 @@ $(() => {
       okButton.remove();
     }
 
-    $h2.on("click", () => {
+    $text.on("click", () => {
       $roll.addClass("animation");
-      $h2.css("text-decoration", "line-through");
+      $text.css("text-decoration", "line-through");
       $roll.className -= "animation";
     });
   });
