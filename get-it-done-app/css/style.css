@@ -30,9 +30,9 @@ input:focus {
   outline: none;
 }
 
-.typeBox:hover {
+/* .typeBox:hover {
   border: 3px solid #262626;
-}
+} */
 
 /* .typeBox {
   width: 500px;
@@ -63,6 +63,7 @@ P {
 
 .item {
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .allItems {
@@ -75,6 +76,9 @@ P {
 
 #item-text {
   text-align: left;
+  margin-left: 25px;
+  color: floralwhite;
+  font-size: x-large;
 }
 
 #item {
@@ -105,9 +109,9 @@ P {
   margin-top: 5px;
 }
 
-.item-text:hover {
+/* .item-text:hover {
   text-shadow: 0.5px;
-}
+} */
 
 .item-box {
   width: 500px;
