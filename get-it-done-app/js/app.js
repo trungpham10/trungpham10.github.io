@@ -35,9 +35,7 @@ $(() => {
   let count = 0;
   typeArea.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
-      console.log(typeArea.value);
       count++;
-      console.log(count);
       const $div = $("<div>").addClass("item");
       const $ball = $("<div>").attr("id", "item-ball");
       const $text = $("<div>").attr("id", "item-text");
@@ -52,6 +50,10 @@ $(() => {
       $($div).append($text);
 
       $(".allItems").append($div);
+
+      window.onbeforeunload = () => {
+        return "Data will be lost if you leave the page, are you sure?";
+      };
       // const $roll = $("<div>");
       // $roll.addClass("clear-item");
       // $div.append($roll);
