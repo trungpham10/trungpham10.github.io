@@ -8,7 +8,7 @@ body {
 
 .typeBox {
   width: 700px;
-  height: 35px;
+  height: 50px;
   margin: auto;
   background-color: floralwhite;
   border-radius: 20px;
@@ -17,10 +17,10 @@ body {
 
 #typeArea {
   width: 650px;
-  height: 20px;
+  height: 25px;
   background-color: floralwhite;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 10px;
   border: 1px solid floralwhite;
   font-size: large;
 }
