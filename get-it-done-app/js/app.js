@@ -42,6 +42,8 @@ $(() => {
       const $ball = $("<div>").attr("id", "item-ball");
       const $text = $("<div>").attr("id", "item-text");
       $div.on("click", () => {
+        const soundEffect = new Audio("Swoosh-1.wav");
+        soundEffect.play();
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
       });
