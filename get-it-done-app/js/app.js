@@ -30,32 +30,32 @@ $(() => {
   //   console.log(quoteData.quote);
   // });
 
-  const okButton = document.getElementById("ok-button");
-  const item = document.getElementById("item");
-  // item.focus();
+  // const okButton = document.getElementById("okButton");
+  const typeArea = document.getElementById("typeArea");
   let count = 0;
-  okButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    count++;
-    const $div = $("<div>");
-    $div.addClass("item-box");
-    const $roll = $("<div>");
-    $roll.addClass("clear-item");
-    $div.append($roll);
-    const $text = $("<div class='item-text'>");
-    $text.text(item.value);
-    $div.append($text);
-    $(".item").append($div);
-    item.value = "";
-    if (count == 3) {
-      item.remove();
-      okButton.remove();
+  typeArea.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      console.log(typeArea.value);
     }
+    // count++;
+    // const $div = $("<div>");
+    // $div.addClass("item-box");
+    // const $roll = $("<div>");
+    // $roll.addClass("clear-item");
+    // $div.append($roll);
+    // const $text = $("<div class='item-text'>");
+    // $text.text(typeArea.value);
+    // $div.append($text);
+    // $(".item").append($div);
+    // typeArea.value = "";
+    // if (count == 3) {
+    //   typeArea.remove();
+    // }
 
-    $text.on("click", () => {
-      $roll.addClass("animation");
-      $text.css("text-decoration", "line-through");
-      $roll.className -= "animation";
-    });
+    // $text.on("click", () => {
+    //   $roll.addClass("animation");
+    //   $text.css("text-decoration", "line-through");
+    //   $roll.className -= "animation";
+    // });
   });
 });
