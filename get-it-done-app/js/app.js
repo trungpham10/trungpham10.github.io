@@ -41,6 +41,9 @@ $(() => {
       const $div = $("<div>").addClass("item");
       const $ball = $("<div>").attr("id", "item-ball");
       const $text = $("<div>").attr("id", "item-text");
+      $text.on("click", () => {
+        $text.css("text-decoration", "line-through");
+      });
       $text.text(typeArea.value);
       $($div).append($ball);
       $($div).append($text);
