@@ -24,7 +24,11 @@ $(() => {
       );
     },
   }).then((quoteData) => {
-    console.log(quoteData);
+    // console.log(quoteData.quotes[0].author);
+    $(".displayQuote").append(`
+      <p> "${quoteData.quotes[0].body}" </p>
+      <p> – ${quoteData.quotes[0].author} </p>
+    `);
   });
 
   // $.ajax({
