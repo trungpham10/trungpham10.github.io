@@ -49,6 +49,12 @@ $(() => {
       const $div = $("<div>").addClass("item");
       const $text = $("<div>").attr("id", "item-text");
 
+      $text.text("‣ " + typeArea.value);
+
+      $($div).append($text);
+
+      $(".allItems").append($div);
+
       // click on todo item
       $div.on("click", () => {
         const soundEffect = new Audio("Swoosh-1.wav");
@@ -56,10 +62,6 @@ $(() => {
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
       });
-      $text.text(typeArea.value);
-      $($div).append($text);
-
-      $(".allItems").append($div);
 
       // warning on page reload
       window.onbeforeunload = () => {
