@@ -2,21 +2,10 @@
 const quoteOfTheDay = "https://favqs.com/api/qotd";
 const quoteContaining = "https://favqs.com/api/quotes/?filter=entrepreneurs";
 const quoteByTag = "https://favqs.com/api/quotes/?filter=technology&type=tag";
-const quoteByAuthor =
-  "https://favqs.com/api/quotes/?filter=Steve+Jobs&type=author";
 
-$(() => {
-  // const inputSearch = document.getElementById("searchTerm");
-  // const button = document.getElementById("searchButton");
-
-  // button.addEventListener("click", (event) => {
-  //   event.preventDefault();
-  //   const searchTerm = inputSearch.value;
-
-  //   console.log(searchTerm);
-  // });
+const renderQuote = () => {
   $.ajax({
-    url: quoteByAuthor,
+    url: quoteByAuthorURL,
     beforeSend: (xhr) => {
       xhr.setRequestHeader(
         "Authorization",
@@ -24,17 +13,31 @@ $(() => {
       );
     },
   }).then((quoteData) => {
-    console.log(quoteData);
-    console.log(quoteData.quotes.length);
-    console.log(Math.round(Math.random() * (quoteData.quotes.length - 1)));
+    // console.log(quoteData);
     const randomQuoteChoiceIndex = Math.round(
       Math.random() * (quoteData.quotes.length - 1)
     );
-
     $(".quoteDisplay").append(`
+      <div class='quoteSection'>
       <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
       <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>
+      </div>
     `);
+  });
+};
+
+$(() => {
+  const $searchTerm = document.getElementById("searchTerm");
+  const $button = $("#searchButton");
+
+  $button.on("click", (event) => {
+    event.preventDefault();
+    $(".quoteSection").remove();
+    console.log($searchTerm.value);
+    let authorChoice = $searchTerm.value.split(" ").join("+");
+    quoteByAuthorURL = `https://favqs.com/api/quotes/?filter=${authorChoice}&type=author`;
+    console.log(quoteByAuthorURL);
+    renderQuote();
   });
 
   // const okButton = document.getElementById("okButton");
