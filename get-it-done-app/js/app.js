@@ -1,11 +1,9 @@
-// QuoteGarden URL
-const randomQuoteURL =
-  "https://quote-garden.herokuapp.com/api/v2/quotes/random";
-
 // FavQs URL
-const baseURL = "https://favqs.com/api/";
-const apiKey = "57466b162e44774694d5770fdefbf733";
 const quoteOfTheDay = "https://favqs.com/api/qotd";
+const quoteContaining = "https://favqs.com/api/quotes/?filter=entrepreneurs";
+const quoteByTag = "https://favqs.com/api/quotes/?filter=business&type=tag";
+const quoteByAuthor =
+  "https://favqs.com/api/quotes/?filter=Jeff+Bezos&type=author";
 
 $(() => {
   // const inputSearch = document.getElementById("searchTerm");
@@ -17,6 +15,17 @@ $(() => {
 
   //   console.log(searchTerm);
   // });
+  $.ajax({
+    url: quoteByAuthor,
+    beforeSend: (xhr) => {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Token token=57466b162e44774694d5770fdefbf733"
+      );
+    },
+  }).then((quoteData) => {
+    console.log(quoteData);
+  });
 
   // $.ajax({
   //   type: "GET",
