@@ -19,8 +19,21 @@ const renderQuote = () => {
     );
     $(".quoteDisplay").append(`
       <div class='quoteSection'>
-      <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
-      <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>
+        <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
+        <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>
+      </div>
+    `);
+  });
+};
+
+const renderRandomQuote = () => {
+  $.ajax({
+    url: quoteOfTheDay,
+  }).then((quoteData) => {
+    $(".quoteDisplay").append(`
+      <div class='quoteSection'>
+        <p> "${quoteData.quote.body}" </p>
+        <p> – ${quoteData.quote.author} </p>
       </div>
     `);
   });
@@ -31,6 +44,7 @@ $(() => {
   // Get element
   const searchTerm = document.getElementById("searchTerm");
   const searchButton = $("#searchButton");
+  const luckyButton = $("#luckyButton");
   const typeArea = document.getElementById("typeArea");
 
   // Search quote
@@ -40,6 +54,13 @@ $(() => {
     let authorChoice = searchTerm.value.split(" ").join("+");
     quoteByAuthorURL = `https://favqs.com/api/quotes/?filter=${authorChoice}&type=author`;
     renderQuote();
+  });
+
+  // Lucky button
+  luckyButton.on("click", (event) => {
+    event.preventDefault();
+    $(".quoteSection").remove();
+    renderRandomQuote();
   });
 
   // Add todo item
