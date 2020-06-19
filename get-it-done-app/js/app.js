@@ -30,7 +30,7 @@ $(() => {
     const randomQuoteChoiceIndex = Math.round(
       Math.random() * (quoteData.quotes.length - 1)
     );
-    console.log(quoteData.quotes[0].author);
+
     $(".quoteDisplay").append(`
       <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
       <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>

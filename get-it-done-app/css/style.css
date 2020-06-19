@@ -6,8 +6,18 @@ body {
   margin-top: 50px;
 }
 
+.quoteDisplay {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 25px;
+}
+
 .addSection {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .typeBox {
@@ -196,30 +206,4 @@ P {
   40% {
     background: lightyellow;
   }
-  /* 50% {
-    background: palegreen;
-    left: 75%;
-    top: 10em;
-    transform: rotate(600deg);
-  }
-  60% {
-    background: mediumaquamarine;
-  }
-  75% {
-    background: steelblue;
-    left: 0%;
-    top: 10em;
-    border-radius: 100%;
-  }
-  80% {
-    background: darkviolet;
-  }
-  90% {
-    background: black;
-  }
-  100% {
-    background: ghostwhite;
-    left: 0px;
-    top: 0px;
-  } */
 }
