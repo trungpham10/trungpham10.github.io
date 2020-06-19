@@ -3,7 +3,7 @@ const quoteOfTheDay = "https://favqs.com/api/qotd";
 const quoteContaining = "https://favqs.com/api/quotes/?filter=entrepreneurs";
 const quoteByTag = "https://favqs.com/api/quotes/?filter=technology&type=tag";
 const quoteByAuthor =
-  "https://favqs.com/api/quotes/?filter=Jeff+Bezos&type=author";
+  "https://favqs.com/api/quotes/?filter=Steve+Jobs&type=author";
 
 $(() => {
   // const inputSearch = document.getElementById("searchTerm");
@@ -16,7 +16,7 @@ $(() => {
   //   console.log(searchTerm);
   // });
   $.ajax({
-    url: quoteByTag,
+    url: quoteByAuthor,
     beforeSend: (xhr) => {
       xhr.setRequestHeader(
         "Authorization",
@@ -24,10 +24,16 @@ $(() => {
       );
     },
   }).then((quoteData) => {
-    // console.log(quoteData.quotes[0].author);
+    console.log(quoteData);
+    console.log(quoteData.quotes.length);
+    console.log(Math.round(Math.random() * (quoteData.quotes.length - 1)));
+    const randomQuoteChoiceIndex = Math.round(
+      Math.random() * (quoteData.quotes.length - 1)
+    );
+    console.log(quoteData.quotes[0].author);
     $(".quoteDisplay").append(`
-      <p> "${quoteData.quotes[0].body}" </p>
-      <p> – ${quoteData.quotes[0].author} </p>
+      <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
+      <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>
     `);
   });
 
