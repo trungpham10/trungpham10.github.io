@@ -1,7 +1,7 @@
 // FavQs URL
 const quoteOfTheDay = "https://favqs.com/api/qotd";
 const quoteContaining = "https://favqs.com/api/quotes/?filter=entrepreneurs";
-const quoteByTag = "https://favqs.com/api/quotes/?filter=business&type=tag";
+const quoteByTag = "https://favqs.com/api/quotes/?filter=technology&type=tag";
 const quoteByAuthor =
   "https://favqs.com/api/quotes/?filter=Jeff+Bezos&type=author";
 
@@ -16,7 +16,7 @@ $(() => {
   //   console.log(searchTerm);
   // });
   $.ajax({
-    url: quoteByAuthor,
+    url: quoteByTag,
     beforeSend: (xhr) => {
       xhr.setRequestHeader(
         "Authorization",
@@ -25,23 +25,11 @@ $(() => {
     },
   }).then((quoteData) => {
     // console.log(quoteData.quotes[0].author);
-    $(".displayQuote").append(`
+    $(".quoteDisplay").append(`
       <p> "${quoteData.quotes[0].body}" </p>
       <p> – ${quoteData.quotes[0].author} </p>
     `);
   });
-
-  // $.ajax({
-  //   type: "GET",
-  //   url: quoteOfTheDay,
-  //   token: "57466b162e44774694d5770fdefbf733",
-  // }).then((quoteData) => {
-  //   $(".quote").append(`
-  //     <p> "${quoteData.quote.body}" </p>
-  //     <p>- ${quoteData.quote.author} </p>
-  //   `);
-  //   console.log(quoteData.quote);
-  // });
 
   // const okButton = document.getElementById("okButton");
   const typeArea = document.getElementById("typeArea");
