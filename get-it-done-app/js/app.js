@@ -26,6 +26,7 @@ const renderQuote = () => {
   });
 };
 
+// Random quote rendering function
 const renderRandomQuote = () => {
   $.ajax({
     url: quoteOfTheDay,
@@ -78,7 +79,7 @@ $(() => {
 
       $(".allItems").append($div);
 
-      // click on todo item
+      // cross out an item
       $div.on("click", () => {
         const soundEffect = new Audio("Swoosh-1.wav");
         soundEffect.play();
