@@ -90,7 +90,7 @@ $(() => {
           const deleteEffect = new Audio("Swoosh-3.wav");
           deleteEffect.play();
           setTimeout(() => {
-            $text.remove();
+            $div.remove();
           }, 500);
         });
       });
