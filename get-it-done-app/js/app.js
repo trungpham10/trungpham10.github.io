@@ -82,6 +82,13 @@ $(() => {
         soundEffect.play();
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
+
+        // click once again for deletion
+        $div.on("click", () => {
+          const deleteEffect = new Audio("Swoosh-3.wav");
+          deleteEffect.play();
+          $text.remove();
+        });
       });
 
       // warning on page reload
