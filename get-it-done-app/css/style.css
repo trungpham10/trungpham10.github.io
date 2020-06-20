@@ -17,11 +17,9 @@ body {
   text-align: center;
 }
 
-.container {
-  margin-top: 25px;
-}
-
-.addSection {
+.logo {
+  text-align: center;
+  color: floralwhite;
   margin-top: 100px;
 }
 
