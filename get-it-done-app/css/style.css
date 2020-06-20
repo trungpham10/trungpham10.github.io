@@ -2,6 +2,13 @@ body {
   background-color: #262626;
 }
 
+#searchTerm,
+#searchButton,
+#luckyButton {
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
 .quoteDisplay {
   margin-left: 200px;
   margin-right: 200px;
