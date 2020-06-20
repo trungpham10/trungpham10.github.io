@@ -65,14 +65,18 @@ $(() => {
   });
 
   // Add todo item
+  let itemCount = 0;
   typeArea.addEventListener("keypress", (event) => {
     // user hits enter
     if ((event.key === "Enter") & (typeArea.value !== "")) {
+      itemCount++;
+
       const $div = $("<div>").addClass("item");
       const $text = $("<div>").attr("id", "item-text");
       const $deleteButton = $("<div>").attr("id", "item-delete");
 
       $text.text("‣ " + typeArea.value);
+      typeArea.value = ""; // empty text box
 
       $($div).append($text);
       $($div).append($deleteButton);
@@ -81,10 +85,17 @@ $(() => {
 
       // cross out an item
       $div.on("click", () => {
+        itemCount--;
+
         const soundEffect = new Audio("Swoosh-1.wav");
         soundEffect.play();
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
+
+        if (itemCount === 0) {
+          const applauseEffect = new Audio("Small-applause.wav");
+          applauseEffect.play();
+        }
       });
 
       // delete an item
@@ -100,7 +111,6 @@ $(() => {
       window.onbeforeunload = () => {
         return "Data will be lost if you leave the page, are you sure?";
       };
-      typeArea.value = "";
     }
   });
 });
