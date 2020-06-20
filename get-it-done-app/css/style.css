@@ -9,6 +9,12 @@ body {
   border-radius: 5px;
 }
 
+#imageButton {
+  float: right;
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
 .quoteDisplay {
   margin-left: 200px;
   margin-right: 200px;

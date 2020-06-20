@@ -56,12 +56,12 @@ const renderImage = () => {
 
 // After HTML loads
 $(() => {
-  renderImage();
   // Get element
   const searchTerm = document.getElementById("searchTerm");
   const searchButton = $("#searchButton");
   const luckyButton = $("#luckyButton");
   const typeArea = document.getElementById("typeArea");
+  const imageButton = $("#imageButton");
 
   // Search quote
   searchButton.on("click", (event) => {
@@ -77,6 +77,12 @@ $(() => {
     event.preventDefault();
     $(".quoteSection").remove();
     renderRandomQuote();
+  });
+
+  // Add image background button
+  imageButton.on("click", (event) => {
+    event.preventDefault();
+    renderImage();
   });
 
   // Add todo item
