@@ -66,7 +66,7 @@ $(() => {
   // Add todo item
   typeArea.addEventListener("keypress", (event) => {
     // user hits enter
-    if (event.key === "Enter") {
+    if ((event.key === "Enter") & (typeArea.value !== "")) {
       const $div = $("<div>").addClass("item");
       const $text = $("<div>").attr("id", "item-text");
 
