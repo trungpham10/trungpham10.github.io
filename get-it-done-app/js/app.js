@@ -97,6 +97,8 @@ $(() => {
 
       // delete an item
       $deleteButton.on("click", () => {
+        const deleteEffect = new Audio("Swoosh-3.wav");
+        deleteEffect.play();
         $div.remove();
       });
 
