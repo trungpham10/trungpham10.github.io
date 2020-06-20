@@ -2,14 +2,12 @@ body {
   background-color: #262626;
 }
 
-.quote {
-  margin-top: 50px;
-}
-
 .quoteDisplay {
   margin-left: 200px;
   margin-right: 200px;
   margin-top: 20px;
+  color: floralwhite;
+  text-align: center;
 }
 
 .container {
@@ -20,6 +18,13 @@ body {
   margin-top: 100px;
 }
 
+.allItems {
+  width: 700px;
+  height: 1000px;
+  margin: auto;
+  margin-top: 50px;
+}
+
 .typeBox {
   width: 700px;
   height: 50px;
@@ -27,23 +32,6 @@ body {
   background-color: floralwhite;
   border-radius: 30px;
   text-align: center;
-}
-
-.typeBox input {
-  overflow: fixed;
-  margin: 0 auto;
-  text-align: left;
-  white-space: nowrap;
-  /* animation: typing 3.5s; */
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 92%;
-  }
 }
 
 #typeArea {
@@ -61,30 +49,6 @@ input:focus {
   outline: none;
 }
 
-/* .typeBox:hover {
-  border: 3px solid #262626;
-} */
-
-/* .typeBox {
-  width: 500px;
-  height: 50px;
-  margin: auto;
-  margin-left: 100px;
-  margin-top: 100px;
-  background-color: black;
-  color: white;
-  font-size: large;
-  border: 2px solid white;
-  border-radius: 25px;
-} */
-
-P {
-  /* color: aliceblue; */
-  color: azure;
-  text-align: center;
-  margin-left: auto;
-}
-
 .items {
   background-color: #262626;
   width: 800px;
@@ -98,49 +62,16 @@ P {
   margin-bottom: 10px;
 }
 
-#item-text {
-  margin-left: 25px;
-}
-
 .item:hover {
   background-color: dimgray;
 }
 
-.allItems {
-  width: 700px;
-  height: 1000px;
-  /* margin-left: 370px; */
-  margin: auto;
-  margin-top: 50px;
-}
-
 #item-text {
   text-align: left;
-  /* margin-left: 25px; */
   color: floralwhite;
   font-size: x-large;
   width: fit-content;
-}
-
-#item {
-  width: 500px;
-  height: 50px;
-  margin: auto;
-  margin-left: 100px;
-  /* margin-right: auto; */
-  margin-top: 100px;
-  background-color: black;
-  color: white;
-  font-size: large;
-  border: 2px solid white;
-  border-radius: 25px;
-}
-
-#ok-button {
-  border-radius: 25px;
-  height: 50px;
-  width: 100px;
-  background-color: floralwhite;
+  margin-left: 25px;
 }
 
 .item-text {
@@ -148,62 +79,4 @@ P {
   font-size: 30px;
   text-align: center;
   margin-top: 5px;
-}
-
-/* .item-text:hover {
-  text-shadow: 0.5px;
-} */
-
-.item-box {
-  width: 500px;
-  height: 50px;
-  margin: auto;
-  margin-left: 100px;
-  border: 1px solid white;
-  background-color: #262626;
-  margin-top: 100px;
-  display: inline-block;
-}
-
-.item-box:hover {
-  text-shadow: 2px 2px;
-  background-color: black;
-  border: 2px solid antiquewhite;
-}
-
-.clear-item {
-  width: 50px;
-  height: 50px;
-  float: left;
-  border: 1px solid white;
-  display: inline-block;
-  background-color: antiquewhite;
-}
-
-.animation {
-  position: relative;
-  animation: rainbow-move-change 3s;
-}
-
-/*colors, movement and rotation*/
-@keyframes rainbow-move-change {
-  0% {
-    background: black;
-    left: 0%;
-    top: 0%;
-  }
-  10% {
-    background: crimson;
-  }
-  25% {
-    background: hotpink;
-    left: 100%;
-    top: 0px;
-  }
-  30% {
-    background: coral;
-  }
-  40% {
-    background: lightyellow;
-  }
 }
