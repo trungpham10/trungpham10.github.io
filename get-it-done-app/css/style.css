@@ -79,9 +79,16 @@ input:focus {
   margin-left: 25px;
 }
 
-.item-text {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 5px;
+#item-delete {
+  text-align: right;
+  width: 20px;
+  height: 20px;
+  float: right;
+  background-color: maroon;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.item div {
+  display: inline-block;
 }

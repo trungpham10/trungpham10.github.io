@@ -69,10 +69,12 @@ $(() => {
     if ((event.key === "Enter") & (typeArea.value !== "")) {
       const $div = $("<div>").addClass("item");
       const $text = $("<div>").attr("id", "item-text");
+      const $deleteButton = $("<div>").attr("id", "item-delete");
 
       $text.text("‣ " + typeArea.value);
 
       $($div).append($text);
+      $($div).append($deleteButton);
 
       $(".allItems").append($div);
 
