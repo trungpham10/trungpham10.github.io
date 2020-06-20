@@ -87,7 +87,9 @@ $(() => {
         $div.on("click", () => {
           const deleteEffect = new Audio("Swoosh-3.wav");
           deleteEffect.play();
-          $text.remove();
+          setTimeout(() => {
+            $text.remove();
+          }, 500);
         });
       });
 
