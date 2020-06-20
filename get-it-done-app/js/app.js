@@ -1,7 +1,5 @@
 // FavQs URL
 const quoteOfTheDay = "https://favqs.com/api/qotd";
-const quoteContaining = "https://favqs.com/api/quotes/?filter=entrepreneurs";
-const quoteByTag = "https://favqs.com/api/quotes/?filter=technology&type=tag";
 
 // Quote rendering function
 const renderQuote = () => {
@@ -40,8 +38,25 @@ const renderRandomQuote = () => {
   });
 };
 
+// Image rendering function
+const apiKey = "d2QSjz2XB8QsuMJoKLork9FXnOQSr13t"; // public key
+const imageID = "43p9g9"; // test image
+const imageURL = `https://wallhaven.cc/api/v1/w/${imageID}?apikey=${apiKey}`;
+const randomImageURL = "https://wallhaven.cc/api/v1/search";
+
+const renderImage = () => {
+  $.ajax({
+    url: imageURL,
+  }).then((imageData) => {
+    console.log(imageData);
+    // console.log(imageData.data[0].path);
+    $("body").css("background-image", `url("${imageData.data.path}")`);
+  });
+};
+
 // After HTML loads
 $(() => {
+  renderImage();
   // Get element
   const searchTerm = document.getElementById("searchTerm");
   const searchButton = $("#searchButton");
