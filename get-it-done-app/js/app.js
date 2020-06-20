@@ -95,6 +95,11 @@ $(() => {
         });
       });
 
+      // delete an item
+      $deleteButton.on("click", () => {
+        $div.remove();
+      });
+
       // warning on page reload
       window.onbeforeunload = () => {
         return "Data will be lost if you leave the page, are you sure?";
