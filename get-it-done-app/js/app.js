@@ -1,3 +1,7 @@
+const displayInstruction = () => {
+  $("#textInstruction").css("display", "inline");
+};
+
 // FavQs URL
 const quoteOfTheDay = "https://favqs.com/api/qotd";
 

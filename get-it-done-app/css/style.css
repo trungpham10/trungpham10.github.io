@@ -45,6 +45,23 @@ body {
   text-align: center;
 }
 
+.enterInstruction {
+  width: 700px;
+  height: 30px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#textInstruction {
+  margin-left: 25px;
+  color: floralwhite;
+  display: none;
+}
+
+#textInstruction span {
+  font-weight: bold;
+}
+
 #typeArea {
   width: 650px;
   height: 25px;
