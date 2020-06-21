@@ -1,0 +1,248 @@
+body {
+  background-color: #262626;
+}
+
+.container {
+  position: fixed;
+  top: 100px;
+  width: 500px;
+}
+
+#searchTerm,
+#searchButton,
+#luckyButton {
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
+#imageButton {
+  float: right;
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
+.quoteDisplay {
+  margin-top: 20px;
+  color: floralwhite;
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+  color: floralwhite;
+  margin-top: 100px;
+}
+
+.allItems {
+  width: 500px;
+  height: 1000px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.typeBox {
+  width: 500px;
+  height: 50px;
+  margin: auto;
+  background-color: floralwhite;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.enterInstruction {
+  width: 500px;
+  height: 30px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#textInstruction {
+  margin-left: 25px;
+  color: floralwhite;
+  display: none;
+}
+
+#textInstruction span {
+  font-weight: bold;
+}
+
+#typeArea {
+  width: 450px;
+  height: 25px;
+  background-color: floralwhite;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid floralwhite;
+  font-size: large;
+}
+
+#typeArea:focus,
+input:focus {
+  outline: none;
+}
+
+.items {
+  background-color: #262626;
+  width: 800px;
+  height: 1000px;
+  margin: auto;
+}
+
+.item {
+  margin: auto;
+  height: fit-content;
+  margin-bottom: 10px;
+}
+
+.item:hover {
+  background-color: dimgray;
+}
+
+#item-text {
+  text-align: left;
+  color: floralwhite;
+  font-size: x-large;
+  width: fit-content;
+  margin-left: 25px;
+}
+
+#item-delete {
+  text-align: right;
+  width: 20px;
+  height: 20px;
+  float: right;
+  background-color: maroon;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.item div {
+  display: inline-block;
+}
+
+@media (min-width: 850px) {
+  body {
+    background-color: #262626;
+  }
+
+  .container {
+    position: fixed;
+    top: 100px;
+    width: 800px;
+    margin-left: 325px;
+  }
+
+  #searchTerm,
+  #searchButton,
+  #luckyButton {
+    background-color: floralwhite;
+    border-radius: 5px;
+  }
+
+  #imageButton {
+    float: right;
+    background-color: floralwhite;
+    border-radius: 5px;
+  }
+
+  .quoteDisplay {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    color: floralwhite;
+    text-align: center;
+  }
+
+  .logo {
+    text-align: center;
+    color: floralwhite;
+    margin-top: 100px;
+  }
+
+  .allItems {
+    width: 700px;
+    height: 1000px;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+  .typeBox {
+    width: 700px;
+    height: 50px;
+    margin: auto;
+    background-color: floralwhite;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  .enterInstruction {
+    width: 700px;
+    height: 30px;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  #textInstruction {
+    margin-left: 25px;
+    color: floralwhite;
+    display: none;
+  }
+
+  #textInstruction span {
+    font-weight: bold;
+  }
+
+  #typeArea {
+    width: 650px;
+    height: 25px;
+    background-color: floralwhite;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid floralwhite;
+    font-size: large;
+  }
+
+  #typeArea:focus,
+  input:focus {
+    outline: none;
+  }
+
+  .items {
+    background-color: #262626;
+    width: 800px;
+    height: 1000px;
+    margin: auto;
+  }
+
+  .item {
+    margin: auto;
+    height: fit-content;
+    margin-bottom: 10px;
+  }
+
+  .item:hover {
+    background-color: dimgray;
+  }
+
+  #item-text {
+    text-align: left;
+    color: floralwhite;
+    font-size: x-large;
+    width: fit-content;
+    margin-left: 25px;
+  }
+
+  #item-delete {
+    text-align: right;
+    width: 20px;
+    height: 20px;
+    float: right;
+    background-color: maroon;
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+
+  .item div {
+    display: inline-block;
+  }
+}
