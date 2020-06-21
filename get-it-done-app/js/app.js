@@ -95,6 +95,7 @@ $(() => {
     // user hits enter
     if ((event.key === "Enter") & (typeArea.value !== "")) {
       itemCount++;
+      $("#textInstruction").css("display", "none");
 
       const $div = $("<div>").addClass("item");
       const $text = $("<div>").attr("id", "item-text");
