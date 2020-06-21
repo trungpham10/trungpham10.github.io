@@ -20,8 +20,8 @@ const renderQuote = () => {
       Math.random() * (quoteData.quotes.length - 1)
     );
 
-    var quoteBody = quoteData.quotes[randomQuoteChoiceIndex].body;
-    var quoteAuthor = quoteData.quotes[randomQuoteChoiceIndex].author;
+    let quoteBody = quoteData.quotes[randomQuoteChoiceIndex].body;
+    let quoteAuthor = quoteData.quotes[randomQuoteChoiceIndex].author;
 
     let myStorage = window.localStorage;
     myStorage.setItem("body", quoteBody);
@@ -41,10 +41,17 @@ const renderRandomQuote = () => {
   $.ajax({
     url: quoteOfTheDay,
   }).then((quoteData) => {
+    let quoteBody = quoteData.quote.body;
+    let quoteAuthor = quoteData.quote.author;
+
+    let myStorage = window.localStorage;
+    myStorage.setItem("body", quoteBody);
+    myStorage.setItem("author", quoteAuthor);
+
     $(".quoteDisplay").append(`
       <div class='quoteSection'>
-        <p> "${quoteData.quote.body}" </p>
-        <p> – ${quoteData.quote.author} </p>
+        <p> "${quoteBody}" </p>
+        <p> – ${quoteAuthor} </p>
       </div>
     `);
   });
