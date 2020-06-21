@@ -118,6 +118,7 @@ $(() => {
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
 
+        // last item applause
         if (itemCount === 0) {
           const applauseEffect = new Audio("Small-applause.wav");
           applauseEffect.play();
@@ -125,12 +126,24 @@ $(() => {
       });
 
       // delete an item
-      $deleteButton.on("click", () => {
+      $deleteButton.on("click", (event) => {
+        // check if item is crossed
+        if ($text.css("text-decoration") !== "line-through") {
+          itemCount--;
+        }
+
+        event.stopPropagation();
         const deleteEffect = new Audio("Swoosh-3.wav");
         deleteEffect.play();
         setTimeout(() => {
           $div.remove();
         }, 600);
+
+        // last item applause
+        if (itemCount === 0) {
+          const applauseEffect = new Audio("Small-applause.wav");
+          applauseEffect.play();
+        }
       });
 
       // warning on page reload
