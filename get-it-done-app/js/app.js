@@ -101,7 +101,7 @@ $(() => {
       const $text = $("<div>").attr("id", "item-text");
       const $deleteButton = $("<div>").attr("id", "item-delete");
 
-      $text.text("‣ " + typeArea.value);
+      $text.text("⦾ " + typeArea.value);
       typeArea.value = ""; // empty text box
 
       $($div).append($text);
