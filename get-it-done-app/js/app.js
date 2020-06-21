@@ -19,10 +19,18 @@ const renderQuote = () => {
     const randomQuoteChoiceIndex = Math.round(
       Math.random() * (quoteData.quotes.length - 1)
     );
+
+    var quoteBody = quoteData.quotes[randomQuoteChoiceIndex].body;
+    var quoteAuthor = quoteData.quotes[randomQuoteChoiceIndex].author;
+
+    let myStorage = window.localStorage;
+    myStorage.setItem("body", quoteBody);
+    myStorage.setItem("author", quoteAuthor);
+
     $(".quoteDisplay").append(`
       <div class='quoteSection'>
-        <p> "${quoteData.quotes[randomQuoteChoiceIndex].body}" </p>
-        <p> – ${quoteData.quotes[randomQuoteChoiceIndex].author} </p>
+        <p> "${quoteBody}" </p>
+        <p> – ${quoteAuthor} </p>
       </div>
     `);
   });
@@ -60,6 +68,17 @@ const renderImage = () => {
 
 // After HTML loads
 $(() => {
+  // get quote data from localStorage and add to DOM
+  let quoteBody = localStorage.getItem("body");
+  let quoteAuthor = localStorage.getItem("author");
+
+  $(".quoteDisplay").append(`
+    <div class='quoteSection'>
+      <p> "${quoteBody}" </p>
+      <p> – ${quoteAuthor} </p>
+    </div>
+  `);
+
   // Get element
   const searchTerm = document.getElementById("searchTerm");
   const searchButton = $("#searchButton");
