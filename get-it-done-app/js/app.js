@@ -139,7 +139,10 @@ $(() => {
 
       // cross out an item
       $div.on("click", () => {
-        itemCount--;
+        // check if item is crossed
+        if ($text.css("text-decoration") !== "line-through") {
+          itemCount--;
+        }
 
         const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
         soundEffect.play();
