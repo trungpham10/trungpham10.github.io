@@ -28,7 +28,6 @@ body {
 }
 
 .logo {
-  text-align: left;
   color: floralwhite;
   margin-top: 100px;
   margin-left: 20px;
@@ -36,7 +35,7 @@ body {
 }
 
 .allItems {
-  width: 450px;
+  width: 380px;
   height: 1000px;
   margin: auto;
   margin-top: 50px;
@@ -44,7 +43,7 @@ body {
 }
 
 .typeBox {
-  width: 450px;
+  width: 400px;
   height: 50px;
   background-color: floralwhite;
   border-radius: 30px;
@@ -54,7 +53,7 @@ body {
 }
 
 .enterInstruction {
-  width: 500px;
+  width: 400px;
   height: 30px;
   margin: auto;
   margin-top: 10px;
@@ -72,7 +71,7 @@ body {
 }
 
 #typeArea {
-  width: 400px;
+  width: 340px;
   height: 25px;
   background-color: floralwhite;
   margin: auto;
@@ -162,6 +161,7 @@ input:focus {
     text-align: center;
     color: floralwhite;
     margin-top: 100px;
+    margin-left: 300px;
   }
 
   .allItems {
@@ -169,15 +169,19 @@ input:focus {
     height: 1000px;
     margin: auto;
     margin-top: 50px;
+    text-align: left;
+    margin-left: 30px;
   }
 
   .typeBox {
     width: 700px;
     height: 50px;
     margin: auto;
+    margin-left: 50px;
     background-color: floralwhite;
     border-radius: 30px;
     text-align: center;
+    align-content: center;
   }
 
   .enterInstruction {
@@ -185,6 +189,7 @@ input:focus {
     height: 30px;
     margin: auto;
     margin-top: 10px;
+    margin-left: 50px;
   }
 
   #textInstruction {
