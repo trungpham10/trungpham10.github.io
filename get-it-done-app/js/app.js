@@ -102,17 +102,15 @@ $(() => {
       // check if item is crossed
       if ($text.css("text-decoration") !== "line-through") {
         itemCount--;
+        localStorage.setItem(
+          "itemList",
+          localStorage
+            .getItem("itemList")
+            .split(",")
+            .filter((e) => e !== text)
+            .join(",")
+        );
       }
-
-      localStorage.setItem(
-        "itemList",
-        localStorage
-          .getItem("itemList")
-          .split(",")
-          .filter((e) => e !== text)
-          .join(",")
-      );
-      console.log(localStorage);
 
       const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
       soundEffect.play();
@@ -131,6 +129,14 @@ $(() => {
       // check if item is crossed
       if ($text.css("text-decoration") !== "line-through") {
         itemCount--;
+        localStorage.setItem(
+          "itemList",
+          localStorage
+            .getItem("itemList")
+            .split(",")
+            .filter((e) => e !== text)
+            .join(",")
+        );
       }
 
       event.stopPropagation();
