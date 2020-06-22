@@ -75,6 +75,74 @@ const renderImage = () => {
 
 // After HTML loads
 $(() => {
+  // load data from local storage function
+  const loadLocalStorage = () => {
+    let itemData = localStorage.getItem("itemList");
+    if (itemData) {
+      for (let itemText of itemData.split(",")) {
+        displayItem(itemText);
+      }
+    }
+  };
+
+  // item displaying function
+  const displayItem = (text) => {
+    const $div = $("<div>").addClass("item");
+    const $text = $("<div>").attr("id", "item-text");
+    const $deleteButton = $("<div>").attr("id", "item-delete");
+
+    $text.text("⦾ " + text);
+    $($div).append($text);
+    $($div).append($deleteButton);
+
+    $(".allItems").append($div);
+
+    // item crossing listener
+    $div.on("click", () => {
+      // check if item is crossed
+      if ($text.css("text-decoration") !== "line-through") {
+        itemCount--;
+      }
+
+      localStorage
+        .getItem("itemList")
+        .split(",")
+        .filter((e) => e !== text);
+
+      const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
+      soundEffect.play();
+      $text.css("text-decoration", "line-through");
+      $text.css("background-color", "dimgray");
+
+      // last item applause
+      if (itemCount === 0) {
+        const applauseEffect = new Audio("sound-effect/Small-applause.wav");
+        applauseEffect.play();
+      }
+    });
+
+    // item deleting listener
+    $deleteButton.on("click", (event) => {
+      // check if item is crossed
+      if ($text.css("text-decoration") !== "line-through") {
+        itemCount--;
+      }
+
+      event.stopPropagation();
+      const deleteEffect = new Audio("sound-effect/Swoosh-3.wav");
+      deleteEffect.play();
+      setTimeout(() => {
+        $div.remove();
+      }, 600);
+
+      // last item applause
+      if (itemCount === 0) {
+        const applauseEffect = new Audio("sound-effect/Small-applause.wav");
+        applauseEffect.play();
+      }
+    });
+  };
+
   // get quote data from localStorage and add to DOM
   let quoteBody = localStorage.getItem("body");
   let quoteAuthor = localStorage.getItem("author");
@@ -87,6 +155,9 @@ $(() => {
     </div>
   `);
   }
+
+  // get item data from localStorage and add to DOM
+  loadLocalStorage();
 
   // Get element
   const searchTerm = document.getElementById("searchTerm");
@@ -118,64 +189,24 @@ $(() => {
   });
 
   // Add todo item
-  let itemCount = 0;
+  let itemList = [];
+  var itemCount = 0;
   typeArea.addEventListener("keypress", (event) => {
     // user hits enter
     if ((event.key === "Enter") & (typeArea.value !== "")) {
       itemCount++;
       $("#textInstruction").css("display", "none");
 
-      const $div = $("<div>").addClass("item");
-      const $text = $("<div>").attr("id", "item-text");
-      const $deleteButton = $("<div>").attr("id", "item-delete");
+      displayItem(typeArea.value);
 
-      $text.text("⦾ " + typeArea.value);
+      let myStorage = window.localStorage;
+      if (myStorage.getItem("itemList") != null) {
+        itemList = myStorage.getItem("itemList").split(",");
+      }
+      itemList.push(typeArea.value);
+      console.log(itemList);
+      myStorage.setItem("itemList", itemList);
       typeArea.value = ""; // empty text box
-
-      $($div).append($text);
-      $($div).append($deleteButton);
-
-      $(".allItems").append($div);
-
-      // cross out an item
-      $div.on("click", () => {
-        // check if item is crossed
-        if ($text.css("text-decoration") !== "line-through") {
-          itemCount--;
-        }
-
-        const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
-        soundEffect.play();
-        $text.css("text-decoration", "line-through");
-        $text.css("background-color", "dimgray");
-
-        // last item applause
-        if (itemCount === 0) {
-          const applauseEffect = new Audio("sound-effect/Small-applause.wav");
-          applauseEffect.play();
-        }
-      });
-
-      // delete an item
-      $deleteButton.on("click", (event) => {
-        // check if item is crossed
-        if ($text.css("text-decoration") !== "line-through") {
-          itemCount--;
-        }
-
-        event.stopPropagation();
-        const deleteEffect = new Audio("sound-effect/Swoosh-3.wav");
-        deleteEffect.play();
-        setTimeout(() => {
-          $div.remove();
-        }, 600);
-
-        // last item applause
-        if (itemCount === 0) {
-          const applauseEffect = new Audio("sound-effect/Small-applause.wav");
-          applauseEffect.play();
-        }
-      });
 
       // warning on page reload
       window.onbeforeunload = () => {
