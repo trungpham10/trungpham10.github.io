@@ -139,14 +139,14 @@ $(() => {
       $div.on("click", () => {
         itemCount--;
 
-        const soundEffect = new Audio("Swoosh-1.wav");
+        const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
         soundEffect.play();
         $text.css("text-decoration", "line-through");
         $text.css("background-color", "dimgray");
 
         // last item applause
         if (itemCount === 0) {
-          const applauseEffect = new Audio("Small-applause.wav");
+          const applauseEffect = new Audio("sound-effect/Small-applause.wav");
           applauseEffect.play();
         }
       });
@@ -159,7 +159,7 @@ $(() => {
         }
 
         event.stopPropagation();
-        const deleteEffect = new Audio("Swoosh-3.wav");
+        const deleteEffect = new Audio("sound-effect/Swoosh-3.wav");
         deleteEffect.play();
         setTimeout(() => {
           $div.remove();
@@ -167,7 +167,7 @@ $(() => {
 
         // last item applause
         if (itemCount === 0) {
-          const applauseEffect = new Audio("Small-applause.wav");
+          const applauseEffect = new Audio("sound-effect/Small-applause.wav");
           applauseEffect.play();
         }
       });
