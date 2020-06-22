@@ -24,14 +24,15 @@ body {
 .quoteDisplay {
   margin-top: 20px;
   color: floralwhite;
-  text-align: center;
+  text-align: left;
 }
 
 .logo {
   text-align: left;
   color: floralwhite;
   margin-top: 100px;
-  margin-left: 45px;
+  margin-left: 20px;
+  float: left;
 }
 
 .allItems {
@@ -39,15 +40,17 @@ body {
   height: 1000px;
   margin: auto;
   margin-top: 50px;
+  float: left;
 }
 
 .typeBox {
   width: 450px;
   height: 50px;
-  margin: auto;
   background-color: floralwhite;
   border-radius: 30px;
   text-align: left;
+  margin-left: 0px;
+  float: left;
 }
 
 .enterInstruction {
@@ -55,7 +58,7 @@ body {
   height: 30px;
   margin: auto;
   margin-top: 10px;
-  margin-left: 20px;
+  float: left;
 }
 
 #textInstruction {
