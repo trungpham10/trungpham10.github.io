@@ -104,10 +104,15 @@ $(() => {
         itemCount--;
       }
 
-      localStorage
-        .getItem("itemList")
-        .split(",")
-        .filter((e) => e !== text);
+      localStorage.setItem(
+        "itemList",
+        localStorage
+          .getItem("itemList")
+          .split(",")
+          .filter((e) => e !== text)
+          .join(",")
+      );
+      console.log(localStorage);
 
       const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
       soundEffect.play();
@@ -204,7 +209,6 @@ $(() => {
         itemList = myStorage.getItem("itemList").split(",");
       }
       itemList.push(typeArea.value);
-      console.log(itemList);
       myStorage.setItem("itemList", itemList);
       typeArea.value = ""; // empty text box
 
