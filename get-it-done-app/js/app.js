@@ -79,12 +79,14 @@ $(() => {
   let quoteBody = localStorage.getItem("body");
   let quoteAuthor = localStorage.getItem("author");
 
-  $(".quoteDisplay").append(`
+  if ((quoteBody != null) & (quoteAuthor != null)) {
+    $(".quoteDisplay").append(`
     <div class='quoteSection'>
       <p> "${quoteBody}" </p>
       <p> – ${quoteAuthor} </p>
     </div>
   `);
+  }
 
   // Get element
   const searchTerm = document.getElementById("searchTerm");
