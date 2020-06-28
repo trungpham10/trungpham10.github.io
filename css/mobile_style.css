@@ -6,6 +6,12 @@ body {
   width: 100%;
 }
 
+.authentication {
+  float: right;
+  background-color: floralwhite;
+  border-radius: 5px;
+}
+
 #searchTerm,
 #searchButton,
 #luckyButton {
