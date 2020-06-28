@@ -121,6 +121,7 @@ $(() => {
       if (itemCount === 0) {
         const applauseEffect = new Audio("sound-effect/Small-applause.wav");
         applauseEffect.play();
+        $("#done").css("color", "forestgreen");
       }
     });
 
