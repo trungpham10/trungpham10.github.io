@@ -3,9 +3,7 @@ body {
 }
 
 .container {
-  position: fixed;
-  top: 100px;
-  width: 500px;
+  width: 100%;
 }
 
 #searchTerm,
@@ -31,19 +29,20 @@ body {
   color: floralwhite;
   margin-top: 100px;
   margin-left: 20px;
-  float: left;
+  float: center;
+  text-align: center;
 }
 
 .allItems {
-  width: 380px;
-  height: 1000px;
+  width: 360px;
+  height: 800px;
   margin: auto;
   margin-top: 50px;
   float: left;
 }
 
 .typeBox {
-  width: 400px;
+  width: 360px;
   height: 50px;
   background-color: floralwhite;
   border-radius: 30px;
@@ -71,7 +70,7 @@ body {
 }
 
 #typeArea {
-  width: 340px;
+  width: 330px;
   height: 25px;
   background-color: floralwhite;
   margin: auto;
