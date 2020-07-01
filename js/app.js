@@ -111,7 +111,6 @@ $(() => {
             .join(",")
         );
       }
-
       const soundEffect = new Audio("sound-effect/Swoosh-1.wav");
       soundEffect.play();
       $text.css("text-decoration", "line-through");
@@ -139,7 +138,6 @@ $(() => {
             .join(",")
         );
       }
-
       event.stopPropagation();
       const deleteEffect = new Audio("sound-effect/Swoosh-3.wav");
       deleteEffect.play();
@@ -214,6 +212,9 @@ $(() => {
       let myStorage = window.localStorage;
       if (myStorage.getItem("itemList") != null) {
         itemList = myStorage.getItem("itemList").split(",");
+      }
+      if (itemList[0] == "") {
+        itemList.splice(0, 1);
       }
       itemList.push(typeArea.value);
       myStorage.setItem("itemList", itemList);
